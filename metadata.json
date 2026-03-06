@@ -1,0 +1,5 @@
+{
+  "name": "FleetMaster",
+  "description": "A comprehensive car inventory and rental management system tracking vehicles, documents, maintenance, and media.",
+  "requestFramePermissions": []
+}

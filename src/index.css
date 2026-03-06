@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+:root.light {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-950 text-slate-200 font-sans antialiased selection:bg-indigo-500/30;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root.light body {
+  @apply bg-slate-50 text-slate-900;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+
+:root.light ::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+:root.light ::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 hover:bg-slate-400;
+}
+
+/* Glass Utilities */
+.glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-xl;
+}
+
+:root.light .glass-panel {
+  @apply bg-white/70 border-slate-200/50 shadow-xl shadow-slate-200/50;
+}
+
+.glass-card {
+  @apply bg-slate-800/40 backdrop-blur-md border border-white/5 hover:border-white/10 transition-all duration-300;
+}
+
+:root.light .glass-card {
+  @apply bg-white/50 border-slate-200/50 hover:border-slate-300/50 hover:shadow-md hover:shadow-slate-200/50;
+}
+
+.glass-input {
+  @apply bg-slate-950/50 border border-white/10 focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/50 placeholder-slate-500 text-slate-200 transition-all;
+}
+
+:root.light .glass-input {
+  @apply bg-white border-slate-200 focus:border-indigo-500 focus:ring-indigo-500 placeholder-slate-400 text-slate-900;
+}
+
+.glass-button {
+  @apply bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20 border border-indigo-500/50 transition-all active:scale-95;
+}
+
+.glass-button-secondary {
+  @apply bg-slate-800/50 hover:bg-slate-700/50 text-slate-200 border border-white/10 hover:border-white/20 transition-all active:scale-95;
+}
+
+:root.light .glass-button-secondary {
+  @apply bg-white hover:bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-300 shadow-sm;
+}
